@@ -1,4 +1,4 @@
-from twilio.rest import Client
+'''from twilio.rest import Client
 
 account_sid = 'AC4c995d84e4895816aa5647dd37d98afa'
 auth_token = '[AuthToken]'
@@ -10,7 +10,16 @@ message = client.messages.create(
   to='whatsapp:+554198943254'
 )
 
-print(message.sid)
+print(message.sid)'''
+
+from twilio.twiml.messaging_response import MessagingResponse
+
+response = MessagingResponse()
+response.message('This is message 1 of 2.')
+response.message('This is message 2 of 2.')
+
+print(response)
+
 
 '''import random
 from datetime import date

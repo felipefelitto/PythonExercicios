@@ -1,11 +1,16 @@
 from twilio.rest import Client
 
-curl 'https://api.twilio.com/2010-04-01/Accounts/AC4c995d84e4895816aa5647dd37d98afa/Messages.json' -X POST \
---data-urlencode 'To=whatsapp:+554198943254' \
---data-urlencode 'From=whatsapp:+14155238886' \
---data-urlencode 'Body=ola teste' \
--u AC4c995d84e4895816aa5647dd37d98afa:[AuthToken]
+account_sid = 'AC4c995d84e4895816aa5647dd37d98afa'
+auth_token = '[AuthToken]'
+client = Client(account_sid, auth_token)
 
+message = client.messages.create(
+  from_='whatsapp:+14155238886',
+  body='ola teste',
+  to='whatsapp:+554198943254'
+)
+
+print(message.sid)
 
 '''import random
 from datetime import date

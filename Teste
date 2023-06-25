@@ -1,0 +1,8 @@
+from twilio.rest import Client
+
+sid='AC4c995d84e4895816aa5647dd37d98afa'
+auth='864dfd4f02d129c239a12b672d22f68f'
+client=Client(sid,auth)
+client.api.account.messages.create(to='whatsapp:+554198943224',
+                               from_='whatsapp:+14155238886',
+                               body="Olá Felipe, Voce criou o primeiro robo")

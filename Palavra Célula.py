@@ -1,15 +1,10 @@
 from twilio.rest import Client
 
-sid='AC4c995d84e4895816aa5647dd37d98afa'
-auth='864dfd4f02d129c239a12b672d22f68f'
-client=Client(sid,auth)
-client.api.account.messages.create(to='whatsapp:+554198943224',
-                               from_='whatsapp:+14155238886',
-                               body="Olá Felipe, Voce criou o primeiro robo")
-
-"""message=client.messages.create(to='whatsapp:+5541998943254',
-                               from_='whatsapp:+17602497880',
-                               body="Olá Felipe, Voce criou o primeiro robo")"""
+curl 'https://api.twilio.com/2010-04-01/Accounts/AC4c995d84e4895816aa5647dd37d98afa/Messages.json' -X POST \
+--data-urlencode 'To=whatsapp:+554198943254' \
+--data-urlencode 'From=whatsapp:+14155238886' \
+--data-urlencode 'Body=ola teste' \
+-u AC4c995d84e4895816aa5647dd37d98afa:[AuthToken]
 
 
 '''import random
